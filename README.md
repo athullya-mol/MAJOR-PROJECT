@@ -1,4 +1,4 @@
-# Virtual Assistance For The Blind 
+# Voice Based Email Assistance For The Blind 
 
 <br>
 
