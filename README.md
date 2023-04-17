@@ -1,4 +1,4 @@
-# Voice Based Email Assistance For The Blind 
+# VMAIL : Voice Based Email Assistance For The Blind 
 
 <br>
 
