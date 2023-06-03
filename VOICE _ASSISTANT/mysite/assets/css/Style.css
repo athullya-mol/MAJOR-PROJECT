@@ -1,0 +1,111 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.navbar-custom{
+	background-color: rgb(172, 162, 252);
+}
+/* Custom styles */
+h1, h2, h3, h4, h5, h6, a {
+	margin:0; padding:0;
+  }
+  .login {
+	margin:0 auto;
+	max-width:500px;
+	margin-top: -60px;
+  }
+  .login-header {
+	color:black;
+	text-align:center;
+	font-size:300%;
+  }
+  
+  .login-form {
+	border:.5px solid rgb(149, 88, 240);
+	background-color: rgb(149, 88, 240);
+	border-radius: 15px;
+	box-shadow:0px 0px 10px #000;
+  }
+  .login-form h3 {
+	text-align:left;
+	margin-left:40px;
+	color:black;
+	font-size: 150%;
+  }
+  .login-form {
+	box-sizing:border-box;
+	padding-top:15px;
+	  padding-bottom:10%;
+	margin:5% auto;
+	text-align:center;
+  }
+  .login input[type="text"],
+  .login input[type="password"],
+  .login input[type="textarea"]{
+	max-width:400px;
+	  width: 80%;
+	line-height:4em;
+	font-family: 'Ubuntu', sans-serif;
+	margin:1em 2em;
+	border-radius:5px;
+	border:2px solid grey;
+	outline:none;
+	padding-left:10px;
+	font-size: 150%;
+  }
+  input[type=text]:focus, input[type=password]:focus {  
+	background-color:lightgray;  
+	outline: none; 
+	border: 2px solid black;
+  
+  }  
+  .login-form input[type="button"] {
+	height: 70px;
+	width:150px;
+	background:rgb(0, 5, 7);
+	border:1px solid rgb(90, 0, 247);
+	border: radius 20px;
+	color:lightgrey;
+	text-transform:uppercase;
+	font-family: 'Ubuntu', sans-serif;
+	cursor:pointer;
+  }
+  
+  .btn-funky-moon {
+    background: #b886fa;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(145deg, #9466f9, #8b42f1, #3a077c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(145deg, #9466f9, #8b42f1, #3a077c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+	box-shadow:0px 8px 15px #000;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 30px;
+	
+
+}
+
+.compose-box {
+	
+	background-color: rgb(149, 88, 240);
+	border-radius: 15px;
+	font-size: 120%;
+}
+
+  /*Media Querie*/
+  @media only screen and (min-width : 150px) and (max-width : 530px){
+	.login-form h3 {
+	  text-align:center;
+	  margin:0;
+	}
+	
+	.login-button {
+	  margin-bottom:20px;
+	  
+	}
+   
+	
+  .options-button{
+	min-width: 200px;
+  }
+  
+  }

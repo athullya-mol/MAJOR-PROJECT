@@ -1,0 +1,94 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+	<body onmousedown = "SendPostRequestTrash(event)">
+		<nav class="navbar navbar-custom">
+			<div class="container-fluid"><a class="navbar-brand mb-0 h1" style="font-size:180%; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: right;">VMAIL : VOICE BASED EMAIL ASSISTANT</a>
+				
+			</div>
+		</nav>
+		<header class="masthead text-left text-white">
+			<div class="masthead-content">
+				<div class="container" >
+					<div class="row">
+						<div class="col-md-6">
+							<br><br><br>
+							<h4 class="masthead-heading mb-0" style = "margin-top: -50px; margin-left: -200px; font-size: 90px;color:rgb(57, 12, 103); font-family: sans-serif;">TRASH FOLDER</h4>			
+							<br><br><br>
+
+							<h2  style="margin-top:-60px; margin-left: -150px; font-size:40px;color: rgb(109, 22, 196); font-family:monospace;" >What would you like to do?</h2><br>
+							
+							<div class="container" style="margin-left: -40px;">
+
+								<table align="center" >
+									<tr>
+										<td>
+											
+												<input href="inbox.html"class="btn btn-funky-moon btn-lg rounded-pill mt-4"
+												role="button"
+												style="width: 250px;" type="submit" 
+												value="SEARCH" >
+										</td>
+
+									</tr>
+										
+									<tr>
+										<td>
+											
+												<input href="options.html"class="btn btn-funky-moon btn-lg rounded-pill mt-4" 
+												role="button" 
+												style="width: 250px;" type="submit"  
+												value="BACK">
+										</td>
+									</tr>
+										
+									
+									<tr>
+										<td>
+											
+												<input href="login.html"class="btn btn-funky-moon btn-lg rounded-pill mt-4"
+												role="button"
+												style="width: 250px;"  type="submit" 
+												value="LOGOUT">
+										</td>
+									</tr>
+										
+
+								</table>
+							
+								</div>
+							</div>
+							<div class="col-md-6">			
+								<img src="https://img.freepik.com/premium-vector/sending-receiving-mail-messages-people-using-electronic-mail-by-phone-computer-laptop-characters-writing-email-letters-by-smartphone-laptop-new-incoming-sms-chat-social-network-spam_458444-932.jpg" alt="Login Image" class="login-image" height="100%" width="200%">
+							</div>
+						</div>
+					</div>
+				</div>
+		</header>
+
+		<svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 260" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(113.478, 33.843, 242.165, 1)" offset="0%"></stop><stop stop-color="rgba(189.228, 144.289, 237.156, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,26L34.3,26C68.6,26,137,26,206,47.7C274.3,69,343,113,411,121.3C480,130,549,104,617,86.7C685.7,69,754,61,823,47.7C891.4,35,960,17,1029,43.3C1097.1,69,1166,139,1234,151.7C1302.9,165,1371,121,1440,104C1508.6,87,1577,95,1646,108.3C1714.3,121,1783,139,1851,156C1920,173,1989,191,2057,186.3C2125.7,182,2194,156,2263,130C2331.4,104,2400,78,2469,78C2537.1,78,2606,104,2674,130C2742.9,156,2811,182,2880,186.3C2948.6,191,3017,173,3086,177.7C3154.3,182,3223,208,3291,186.3C3360,165,3429,95,3497,91C3565.7,87,3634,147,3703,151.7C3771.4,156,3840,104,3909,86.7C3977.1,69,4046,87,4114,117C4182.9,147,4251,191,4320,199.3C4388.6,208,4457,182,4526,160.3C4594.3,139,4663,121,4731,117C4800,113,4869,121,4903,125.7L4937.1,130L4937.1,260L4902.9,260C4868.6,260,4800,260,4731,260C4662.9,260,4594,260,4526,260C4457.1,260,4389,260,4320,260C4251.4,260,4183,260,4114,260C4045.7,260,3977,260,3909,260C3840,260,3771,260,3703,260C3634.3,260,3566,260,3497,260C3428.6,260,3360,260,3291,260C3222.9,260,3154,260,3086,260C3017.1,260,2949,260,2880,260C2811.4,260,2743,260,2674,260C2605.7,260,2537,260,2469,260C2400,260,2331,260,2263,260C2194.3,260,2126,260,2057,260C1988.6,260,1920,260,1851,260C1782.9,260,1714,260,1646,260C1577.1,260,1509,260,1440,260C1371.4,260,1303,260,1234,260C1165.7,260,1097,260,1029,260C960,260,891,260,823,260C754.3,260,686,260,617,260C548.6,260,480,260,411,260C342.9,260,274,260,206,260C137.1,260,69,260,34,260L0,260Z"></path></svg>
+	<script>
+	function SendPostRequestTrash(event){
+		$.ajax({
+        url: "{% url 'homepage:trash' %}",
+        method: 'POST',
+        data: { 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+        success: function (data) {
+			if(data.result == 'success'){
+				window.location = "{% url 'homepage:options' %}";
+			}
+			else if(data.result == 'logout'){
+				window.location = "{% url 'homepage:login' %}";
+			}
+        }
+    });
+	}
+	</script>
+
+<footer class="py-5 bg-black">
+	<div class="container">
+		<p class="text-center text-white m-0 small">Copyright&nbsp;© Voice Based Email&nbsp;</p>
+	</div>
+</footer>
+
+{% endblock %}
